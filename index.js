@@ -31,6 +31,15 @@ const managerQs = [
   },
 ];
 
+const addTeamMember = [
+  {
+    type: "list",
+    message: "Would you like to add another team member?",
+    choices: ["Engineer", "Intern", "None"],
+    name: "teamMember",
+  },
+];
+
 const engineerQs = [
   {
     type: "input",
@@ -77,14 +86,14 @@ const internQs = [
   },
 ];
 
-// function writeToFile(fileType, data) {
-//   fs.writeFile(fileType, data, (err) => {
-//     err ? console.log(err) : console.log("Success!");
-//   });
-// }
+function writeToFile(fileType, data) {
+  fs.writeFile(fileType, data, (err) => {
+    err ? console.log(err) : console.log("Success!");
+  });
+}
 
 function init() {
-  inquirer.prompt(questions).then((response) => {
+  inquirer.prompt(managerQs).then((response) => {
     const fileData = generateMarkdown(response);
     writeToFile("index.html", fileData);
   });
