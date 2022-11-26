@@ -93,10 +93,45 @@ function writeToFile(fileType, data) {
 }
 
 function init() {
-  inquirer.prompt(managerQs).then((response) => {
-    const fileData = generateMarkdown(response);
-    writeToFile("index.html", fileData);
+  inquirer.prompt(managerQs).then(({ name, id, email, officeNumber }) => {
+    var manager = new Manager(name, id, email, officeNumber);
+    employees.push(manager);
+    menu();
   });
+}
+
+function menu() {
+  inquirer.prompt(addTeamMember).then(({ teamMember }) => {
+    if (teamMember === "Engineer") {
+      addEngineer();
+    } else if (teamMember === "Intern") {
+      addIntern();
+    } else {
+      finishGenerator();
+    }
+  });
+}
+
+function addEngineer() {
+  inquirer.prompt(engineerQs).then(({ name, id, email, github }) => {
+    var engineer = new Engineer(name, id, email, github);
+    employees.push(engineer);
+    menu();
+  });
+}
+
+function addIntern() {
+  inquirer.prompt(internQs).then(({ name, id, email, school }) => {
+    var intern = new Intern(name, id, email, school);
+    employees.push(intern);
+    menu();
+  });
+}
+
+function finishGenerator() {
+  console.log(employees);
+  const fileData = generateMarkdown(employees);
+  writeToFile("index.html", fileData);
 }
 
 init();
