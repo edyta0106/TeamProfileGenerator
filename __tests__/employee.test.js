@@ -26,4 +26,8 @@ describe("Create an Employee", () => {
   it("Testing getEmail function", () => {
     expect(employee.getEmail()).toBe("edyta0106@gmail.com");
   });
+
+  it("Testing getRole function which returns Employee", () => {
+    expect(employee.getRole()).toBe("Employee");
+  });
 });
