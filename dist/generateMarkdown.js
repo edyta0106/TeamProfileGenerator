@@ -1,14 +1,10 @@
-function renderGitHub(github) {
-  return `[GitHub](https://github.com/${github})`;
-}
-
 function generateManager(data) {
   return `<div class="card" style="width: 18rem">
         <div class="card-header text-bg-primary p-3">Manager</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${data.getName()}</li>
           <li class="list-group-item">ID: ${data.getId()}</li>
-          <li class="list-group-item">Email: <a href="#">${data.getEmail()}</a></li>
+          <li class="list-group-item">Email: <a href="mailto: ${data.getEmail()}">${data.getEmail()}</a></li>
           <li class="list-group-item">Office Number: ${data.getOfficeNumber()}</li>
         </ul>
       </div>`;
@@ -20,8 +16,8 @@ function generateEngineer(data) {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${data.getName()}</li>
           <li class="list-group-item">ID: ${data.getId()}</li>
-          <li class="list-group-item">Email: <a href="#">${data.getEmail()}</a></a></li>
-          <li class="list-group-item">GitHub: <a href="#" target="_blank">${renderGitHub(data.getGitHub())}</a></li>
+          <li class="list-group-item">Email: <a href="mailto: ${data.getEmail()}">${data.getEmail()}</a></a></li>
+          <li class="list-group-item">GitHub: <a href="https://github.com/${data.getGitHub()}" target="_blank">${data.getGitHub()}</a></li>
         </ul>
       </div>`;
 }
@@ -32,7 +28,7 @@ function generateIntern(data) {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: ${data.getName()}</li>
           <li class="list-group-item">ID: ${data.getId()}</li>
-          <li class="list-group-item">Email: <a href="#">${data.getEmail()}</a></a></li>
+          <li class="list-group-item">Email: <a href="mailto: ${data.getEmail()}">${data.getEmail()}</a></a></li>
           <li class="list-group-item">School: ${data.getSchool()}</li>
         </ul>
       </div>`;
