@@ -33,8 +33,8 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 The following video link demonstartes the functionality of the Team Profile Generator:
 
-[Team Profile Generator Video]()
+[Team Profile Generator Video](https://drive.google.com/file/d/1DV5o6nvMtSCA3L7b9lsND9pdpvn157gp/view)
 
 The following image shows the generated HTML’s appearance and functionality:
 
-![HTML webage title "My Team" with cards that list employee names, titles, and other key information]()
+![HTML webage title "My Team" with cards that list employee names, titles, and other key information](./images/Team%20Profile%20Generator%20Screenshot.png)
